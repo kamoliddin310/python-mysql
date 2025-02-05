@@ -17,27 +17,7 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
 
-    cursor.execute(f"CREATE DATABASE IF NOT EXISTS {settings.db_name}")
-    cursor.execute(f"USE {settings.db_name}")
-
-    # create table
-    create_books_table(cursor)
-    connection.commit()
-
-    # insert books
-    insert_book(
-        cursor=cursor,
-        title="Hamsa",
-        author="Alisher Navoiy",
-        published_year=1470,
-        genre='Roman',
-        price=20,
-        available=True
-    )
-    connection.commit()
-
-    # show books
-    show_all_books(cursor)
+    # db dagi functionni ishlating
 
     # close
     cursor.close()
