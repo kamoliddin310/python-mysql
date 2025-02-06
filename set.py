@@ -1,0 +1,5 @@
+users = "root"
+password = "kamoliddin310"
+host = "localhost"
+port = "3306"
+database = "company_db"
