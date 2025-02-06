@@ -211,4 +211,6 @@ pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,venv
 .salkam
-set
+*.pyc  
+__pycache__/  
+set.py  
