@@ -3,8 +3,8 @@ import kod
 from funktion import(
     created_table,
     insert_into,
-    insert_into,
-    deleate_from,
+    update_table,
+    delete_from,
     select_from_where
 )
 
@@ -16,11 +16,11 @@ s = connect(
         database =   kod.database
 )
 cursor = s.cursor()
-cursor.execute("TRUNCATE TABLE books;")
+cursor.execute("TRUNCATE TABLE users;")
 
 created_table(cursor)
 
-
+    # Ma'lumot qushish
 a = [
     ("Ali", 32),
     ("Sherbe", 19),
@@ -28,3 +28,23 @@ a = [
 ]
 insert_into(cursor, a)
 s.commit()
+
+    # yoshni yangilash
+b = int(input("Foydalanuvchini id raqamini kiriting --> " ))
+a = int(input("Foyadalanuvchini yangi yoshini kiriting --> " ))
+update_table(cursor, a, b)
+print("\n")
+
+
+    # Uchirish
+a = int(input("Uchirmoqchi bulgan insonni id raqamini kiriting --> " ))
+delete_from(cursor, a)
+print("\n")
+
+
+    # 25 yoshdan katta bulgan foydalanuvchilarni chiqarish
+select_from_where(cursor)
+
+
+cursor.close()
+s.close()
